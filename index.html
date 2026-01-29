@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Weekly Reports</title>
+  
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; }
+      h1 { text-align: center; }
+      .main-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+      .main-table th, .main-table td { border: 1px solid #ddd; padding: 8px; }
+      .main-table th {
+        background: #f3f4f6;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+      }
+      .main-table tr { cursor: pointer; transition: background 0.15s; }
+      .main-table tr:hover { background: #f0f6ff; }
+      .report-section { display: none; margin-top: 2rem; }
+      .report-section.active { display: block; }
+      .back-btn { margin-bottom: 1.5rem; color: #2563eb; cursor: pointer; text-decoration: underline; display: inline-block; }
+      table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+      th, td { border: 1px solid #ddd; padding: 8px; }
+      th { background: #f3f4f6; }
+    </style>
+  
+</head>
+<body>
+  <h1>Project Weekly Reports</h1>
+  
+    <div id="main-table-section">
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Job No.</th>
+            <th>Client</th>
+            <th>Assignee</th>
+            <th>Last Week</th>
+            <th>This Week</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr onclick="showReport('2125')">
+              <td>GS칼텍스 CDU 에너지 최적화 Study</td>
+              <td></td>
+              <td>GS Caltex</td>
+              <td></td>
+              <td><span style="color:#bbb">No summary</span></td>
+              <td><span style="color:#bbb">No summary</span></td>
+            </tr>
+          
+            <tr onclick="showReport('2124')">
+              <td>리튬회수율향상을 위한 냉각결정화 Project</td>
+              <td>250100</td>
+              <td>Energymaterials</td>
+              <td>김영우</td>
+              <td>1st Vendor Print 검토 진행 중.</td>
+              <td><span style="color:#bbb">No summary</span></td>
+            </tr>
+          
+            <tr onclick="showReport('2122')">
+              <td>	포항무탄소분산에너지 Prototype 개념설계</td>
+              <td>92309P</td>
+              <td>신사업실</td>
+              <td>서자연, 정연희, 이석주, 금동섭</td>
+              <td>Cost Optimization 반영한 PFD 이슈 완료 (1/20)</td>
+              <td><span style="color:#bbb">No summary</span></td>
+            </tr>
+          
+            <tr onclick="showReport('2116')">
+              <td>GS CALTEX 85 SRU O2 Injection Package Project</td>
+              <td></td>
+              <td>GS Caltex</td>
+              <td>이규호, 이석주</td>
+              <td>1. 현대오일뱅크(HDO)에 2018년에 Oxygen Injection Package 진행했던 업무 내용 공유<br>   - 라이센스를  Worlyparsons에서 진행<br>   - 신규로 설치된 부분은  " 산소버너(ICE) + Reaction F'ce + WHB + Duct + O2 Lance"<br><br>2. 과거 535 SRU O2 Enrichment Study 내용 확인 및 O2 Injector 특허 내용 확인<br>   - O2 Injector 제작 관련 : 비용 2,000만원 / 기간 1달<br>   - 관련특허 : 당사 보유 (10-2013-0107739_산소 인젝터에 의해 최적화된 연소 안정성을 갖는 황회수 공정용 클라우스 버너)<br><br>3. 85 SRU Revamp Study 당시 내용 검토<br>   - Sulfur Production : 190 TPD -> 250 TPD<br>   - Reaction Furnace Pressure : 0.44 -> 0.69 kg/cm2g (Original Design 도 0.69 kg/cm2g임)<br>   - O2 Enrichment Level : Air -> Max. 30% <br>   - WHB Outlet 온도 증가로 압력을 낮췄었는데, 이에 대한 검토 필요함 (Reheater의 Heatsource 임)<br><br>4. SRU Experience List 작성/수정 중</td>
+              <td><span style="color:#bbb">No summary</span></td>
+            </tr>
+          
+            <tr onclick="showReport('2108')">
+              <td>NEA LNG Hub Terminal Phase 1 EPCC</td>
+              <td>240140</td>
+              <td>NEA LNG Hub Terminal Co. Ltd.</td>
+              <td>소명섭, 서자연, 남궁연희, 금동섭, 신동원</td>
+              <td>선박 사양 변경에 따른 영향성 검토 진행(~1/22)</td>
+              <td><span style="color:#bbb">No summary</span></td>
+            </tr>
+          
+            <tr onclick="showReport('2087')">
+              <td>Evoloh Electrolysis BOP Project</td>
+              <td>250800</td>
+              <td>Evoloh Inc.</td>
+              <td>이혜진, 정정규, 남궁연희, 계도현, 최은하</td>
+              <td>1. Base Design Set-up<br>- H2 vent philosophy 발주처 confirm 완료<br>- Electrolyte conditioning filter type 검토 및 발주처 논의 중 <br><br>2. Equipment Sizing<br>- Vessel sizing<br>- Pump hydraulic <br><br>3. Deliverable Issue<br>- PFD : 120 / 600 MW Base Case (1/29 예정)<br>- HMB : 120 / 600 MW Base Case (1/29 예정)<br><br>4. Alt-case Set up<br>- 120 MW : Condensate recycle 유량 대비 CAPEX 절감 효과 분석 후, Condensate recycle 관련 equipment 삭제 고려<br>- 600 MW : O2 separator Size 에 따른 제작 용이성 및 가격 검토 후, No.Equipment 변경 고려<br>- Dryer 관련 : Regeneration concept 변경 가능 여부 (Product spec 과 연관됨) 검토 후, Regen gas compressor 등 삭제 고려</td>
+              <td>1. Base Design Set-up<br>- Electrolyte conditioning filter type 검토 및 발주처 논의 중 - 해당 Item 은 PFD 에 'HOLD' 로 이슈 예정<br><br>2. Equipment Sizing<br>- Vessel sizing<br>- Pump hydraulic <br><br>3. Deliverable Issue<br>- PFD : 120 / 600 MW Base Case (1/29 예정)<br>- HMB : 120 / 600 MW Base Case (1/29 예정)<br><br>4. Alt-case Set up<br>- 120 MW : Condensate recycle 유량 대비 CAPEX 절감 효과 분석 후, Condensate recycle 관련 equipment 삭제 고려<br>- 600 MW : O2 separator Size 에 따른 제작 용이성 및 가격 검토 후, No.Equipment 변경 고려<br>- Dryer 관련 : Regeneration concept 변경 가능 여부 (Product spec 과 연관됨) 검토 후, Regen gas compressor 등 삭제 고려</td>
+            </tr>
+          
+            <tr onclick="showReport('2014')">
+              <td>Aramco SRU Standardization</td>
+              <td></td>
+              <td>ARAMCO</td>
+              <td>이석주, 이규호, 금동섭</td>
+              <td><span style="color:#bbb">No summary</span></td>
+              <td>SRU Standardization Development Program 추진 재개 및 범위/일정/비용 논의 진행함.<br><br>Agreements / Conclusions<br>1.	본 Program은 Phase 1 (Alpha) 착수 여부 결정 단계에 있음.<br>2.	Phase 1 산출물은 Conceptual Design + DBSP 지원 수준으로 정의.<br>3.	Licensor는 초기 필수 아님, FEED 단계에서 선택 가능.<br>4.	경영진 승인 후 비용 협의 → 계약 체결 → Phase 1 착수.<br>5.	Demo/Video는 경영진 설득용 Showcase 목적에 한정.<br>* Technical services EVP (Aramco CEO deputy to advertise the idea and gain approval) 과의 미팅 이후 프로젝트 진행 여부 결정 예정.</td>
+            </tr>
+          
+            <tr onclick="showReport('13')">
+              <td>TUPRAS IZMIR REFINERY SAF PROJECT</td>
+              <td>250290</td>
+              <td>TUPRAS</td>
+              <td>박준철, 신혜진, 김하영</td>
+              <td>프로젝트현황<br>- 1/15일 금액 재 제출 (25년 11월 제출 금액에서 오류 사항 수정)<br>- 1/23일까지 Tank Configuration 변경안에 대한 대략적인 cost reduction 제출 제안<br>- 1/29에 binding 금액으로 제출할 것을 발주처에서 요구 -> 2/12일까지 낼 수 있다고 답변</td>
+              <td>Early Work 수행<br>- HOT OIL system 재설계 / HMB / Markup PFD 작성<br>- FEED Verification History 작성 작업<br>- TWS Histroy 정리 작업<br>- Lean Amine 변경으로 인한 impact 확인</td>
+            </tr>
+          
+        </tbody>
+      </table>
+      <div style="color:#888;font-size:13px;margin-bottom:2rem;">Click a project row to see full 3-week report and issues.</div>
+    </div>
+  
+  
+    <div class="report-section" id="report-2125">
+      <span class="back-btn" onclick="showMainTable()">← Back to All Projects</span>
+      <h2>GS칼텍스 CDU 에너지 최적화 Study</h2>
+      
+        <h3>Last Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>This Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>Next Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+    </div>
+  
+    <div class="report-section" id="report-2124">
+      <span class="back-btn" onclick="showMainTable()">← Back to All Projects</span>
+      <h2>리튬회수율향상을 위한 냉각결정화 Project</h2>
+      
+        <h3>Last Week</h3>
+        <p>1st Vendor Print 검토 진행 중.</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>This Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>Next Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+    </div>
+  
+    <div class="report-section" id="report-2122">
+      <span class="back-btn" onclick="showMainTable()">← Back to All Projects</span>
+      <h2>	포항무탄소분산에너지 Prototype 개념설계</h2>
+      
+        <h3>Last Week</h3>
+        <p>Cost Optimization 반영한 PFD 이슈 완료 (1/20)</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>2월 4일 미팅 참석 요청</td><td>신사업으로 부터 하기 Agenda로 2월 첫주 회의에 Amogy와 함께하는 미팅 참석 요청이 옴.
+
+- 아모지 New Model 에 따른 기술 내용 공유
+- 아모지 개질기 모듈에 기회기를 내재화함에 따른 GS 역무 내용 검토 및 Control scheme 
+- 프로젝트 비용 (CAPEX, OPEX) 검토 내용 논의
+- Long lead item 에 대한 기술 요구 사항  
+</td><td>open</td></tr>
+          </tbody>
+        </table>
+      
+        <h3>This Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>Next Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+    </div>
+  
+    <div class="report-section" id="report-2116">
+      <span class="back-btn" onclick="showMainTable()">← Back to All Projects</span>
+      <h2>GS CALTEX 85 SRU O2 Injection Package Project</h2>
+      
+        <h3>Last Week</h3>
+        <p>1. 현대오일뱅크(HDO)에 2018년에 Oxygen Injection Package 진행했던 업무 내용 공유<br>   - 라이센스를  Worlyparsons에서 진행<br>   - 신규로 설치된 부분은  " 산소버너(ICE) + Reaction F'ce + WHB + Duct + O2 Lance"<br><br>2. 과거 535 SRU O2 Enrichment Study 내용 확인 및 O2 Injector 특허 내용 확인<br>   - O2 Injector 제작 관련 : 비용 2,000만원 / 기간 1달<br>   - 관련특허 : 당사 보유 (10-2013-0107739_산소 인젝터에 의해 최적화된 연소 안정성을 갖는 황회수 공정용 클라우스 버너)<br><br>3. 85 SRU Revamp Study 당시 내용 검토<br>   - Sulfur Production : 190 TPD -> 250 TPD<br>   - Reaction Furnace Pressure : 0.44 -> 0.69 kg/cm2g (Original Design 도 0.69 kg/cm2g임)<br>   - O2 Enrichment Level : Air -> Max. 30% <br>   - WHB Outlet 온도 증가로 압력을 낮췄었는데, 이에 대한 검토 필요함 (Reheater의 Heatsource 임)<br><br>4. SRU Experience List 작성/수정 중</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>This Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>Next Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+    </div>
+  
+    <div class="report-section" id="report-2108">
+      <span class="back-btn" onclick="showMainTable()">← Back to All Projects</span>
+      <h2>NEA LNG Hub Terminal Phase 1 EPCC</h2>
+      
+        <h3>Last Week</h3>
+        <p>선박 사양 변경에 따른 영향성 검토 진행(~1/22)</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>선박 사양 변경 요청</td><td>180,000m3 선박 기준으로 설계된 해양 접안 및 상부 연결 설비에 대해 200,000m3 선박도 허용 가능한지 발주자 검토 요청이 들어옴
+-> 1차 검토 결과 문제 없음 보고됨</td><td>open</td></tr>
+          </tbody>
+        </table>
+      
+        <h3>This Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>Next Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+    </div>
+  
+    <div class="report-section" id="report-2087">
+      <span class="back-btn" onclick="showMainTable()">← Back to All Projects</span>
+      <h2>Evoloh Electrolysis BOP Project</h2>
+      
+        <h3>Last Week</h3>
+        <p>1. Base Design Set-up<br>- H2 vent philosophy 발주처 confirm 완료<br>- Electrolyte conditioning filter type 검토 및 발주처 논의 중 <br><br>2. Equipment Sizing<br>- Vessel sizing<br>- Pump hydraulic <br><br>3. Deliverable Issue<br>- PFD : 120 / 600 MW Base Case (1/29 예정)<br>- HMB : 120 / 600 MW Base Case (1/29 예정)<br><br>4. Alt-case Set up<br>- 120 MW : Condensate recycle 유량 대비 CAPEX 절감 효과 분석 후, Condensate recycle 관련 equipment 삭제 고려<br>- 600 MW : O2 separator Size 에 따른 제작 용이성 및 가격 검토 후, No.Equipment 변경 고려<br>- Dryer 관련 : Regeneration concept 변경 가능 여부 (Product spec 과 연관됨) 검토 후, Regen gas compressor 등 삭제 고려</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>This Week</h3>
+        <p>1. Base Design Set-up<br>- Electrolyte conditioning filter type 검토 및 발주처 논의 중 - 해당 Item 은 PFD 에 'HOLD' 로 이슈 예정<br><br>2. Equipment Sizing<br>- Vessel sizing<br>- Pump hydraulic <br><br>3. Deliverable Issue<br>- PFD : 120 / 600 MW Base Case (1/29 예정)<br>- HMB : 120 / 600 MW Base Case (1/29 예정)<br><br>4. Alt-case Set up<br>- 120 MW : Condensate recycle 유량 대비 CAPEX 절감 효과 분석 후, Condensate recycle 관련 equipment 삭제 고려<br>- 600 MW : O2 separator Size 에 따른 제작 용이성 및 가격 검토 후, No.Equipment 변경 고려<br>- Dryer 관련 : Regeneration concept 변경 가능 여부 (Product spec 과 연관됨) 검토 후, Regen gas compressor 등 삭제 고려</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>Next Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+    </div>
+  
+    <div class="report-section" id="report-2014">
+      <span class="back-btn" onclick="showMainTable()">← Back to All Projects</span>
+      <h2>Aramco SRU Standardization</h2>
+      
+        <h3>Last Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>This Week</h3>
+        <p>SRU Standardization Development Program 추진 재개 및 범위/일정/비용 논의 진행함.<br><br>Agreements / Conclusions<br>1.	본 Program은 Phase 1 (Alpha) 착수 여부 결정 단계에 있음.<br>2.	Phase 1 산출물은 Conceptual Design + DBSP 지원 수준으로 정의.<br>3.	Licensor는 초기 필수 아님, FEED 단계에서 선택 가능.<br>4.	경영진 승인 후 비용 협의 → 계약 체결 → Phase 1 착수.<br>5.	Demo/Video는 경영진 설득용 Showcase 목적에 한정.<br>* Technical services EVP (Aramco CEO deputy to advertise the idea and gain approval) 과의 미팅 이후 프로젝트 진행 여부 결정 예정.</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>Next Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+    </div>
+  
+    <div class="report-section" id="report-13">
+      <span class="back-btn" onclick="showMainTable()">← Back to All Projects</span>
+      <h2>TUPRAS IZMIR REFINERY SAF PROJECT</h2>
+      
+        <h3>Last Week</h3>
+        <p>프로젝트현황<br>- 1/15일 금액 재 제출 (25년 11월 제출 금액에서 오류 사항 수정)<br>- 1/23일까지 Tank Configuration 변경안에 대한 대략적인 cost reduction 제출 제안<br>- 1/29에 binding 금액으로 제출할 것을 발주처에서 요구 -> 2/12일까지 낼 수 있다고 답변</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>This Week</h3>
+        <p>Early Work 수행<br>- HOT OIL system 재설계 / HMB / Markup PFD 작성<br>- FEED Verification History 작성 작업<br>- TWS Histroy 정리 작업<br>- Lean Amine 변경으로 인한 impact 확인</p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+        <h3>Next Week</h3>
+        <p><span style="color:#bbb">No summary</span></p>
+        <table>
+          <thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      
+    </div>
+  
+  
+    <script>
+      function showReport(projectId) {
+        document.getElementById('main-table-section').style.display = 'none';
+        document.querySelectorAll('.report-section').forEach(el => el.classList.remove('active'));
+        document.getElementById('report-' + projectId).classList.add('active');
+      }
+      function showMainTable() {
+        document.getElementById('main-table-section').style.display = 'block';
+        document.querySelectorAll('.report-section').forEach(el => el.classList.remove('active'));
+      }
+    </script>
+  
+</body>
+</html>
